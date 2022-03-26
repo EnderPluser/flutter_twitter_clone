@@ -17,7 +17,7 @@ jobs:
     # Get flutte
     - run: flutter pub get
     # Build :D 
-    - run: flutter build
+    - run: flutter build --ignore-deprecation
     
     - uses: actions/upload-artifact@v1
       with:
