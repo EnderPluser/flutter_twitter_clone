@@ -6,6 +6,7 @@ workflows:
       vars:
         FCI_CLONE_UNSHALLOW: 'true'
       flutter: 1.22.6
+      dart: 2.16.2
       xcode: latest
       cocoapods: default
     scripts:
@@ -26,8 +27,7 @@ workflows:
         flutter clean
         flutter doctor -v
         flutter packages pub get
-        flutter build apk --debug --enable-experiment=non-nullable --no-sound-null-safety --split-per-abi
-      - |
+        flutter build apk --target-platform android-arm,android-arm64,android-x64      - |
         # upload build
         - build/**/outputs/**/*.apk
         - build/**/outputs/**/*.aab
