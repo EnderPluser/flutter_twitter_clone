@@ -25,7 +25,7 @@ workflows:
         # set up local properties
         
         cd . && flutter packages pub get
-        cd . && flutter build apk --release --enable-experiment=non-nullable --no-sound-null-safety
+        cd . && flutter build apk --debug --enable-experiment=non-nullable --no-sound-null-safety
       - |
         # upload build
         - build/**/outputs/**/*.apk
