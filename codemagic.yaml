@@ -5,7 +5,7 @@ workflows:
     environment:
       vars:
         FCI_CLONE_UNSHALLOW: 'true'
-      ndk: r29
+      ndk: r21d
       flutter: 1.22.6
       xcode: latest
       cocoapods: default
