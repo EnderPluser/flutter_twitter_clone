@@ -11,16 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: ls -a via OPEN SSH Private Key
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-            cd /tmp
-            ls -a
-            echo "env_var:$FIRST_NAME"
-            exit 1
-          host: ${{ secrets.HOST }}
-          user: root
-          key: ${{ secrets.PRIVATE_KEY}}
-          pass: ${{ secrets.PASS}}
-          args: "-tt -vvv"
+       steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
