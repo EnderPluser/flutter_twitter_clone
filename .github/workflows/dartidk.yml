@@ -18,8 +18,7 @@ jobs:
       with:
         flutter-version: 1.22.6
     # Get flutter
-    - run: flutter clean
-           flutter packages pub get 
+    - run: flutter clean && flutter packages pub get 
     # Build :D 
     - run: flutter build apk --release
     
