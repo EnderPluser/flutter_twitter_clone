@@ -23,7 +23,7 @@ workflows:
           -validity 10000
      - |
         # set up local properties
-        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
+        
         cd . && flutter packages pub get
         cd . && flutter build apk --release --enable-experiment=non-nullable --no-sound-null-safety
         cd . && flutter build appbundle --release --enable-experiment=non-nullable --no-sound-null-safety
