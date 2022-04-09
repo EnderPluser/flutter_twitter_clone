@@ -24,9 +24,10 @@ workflows:
           -validity 10000
       - |
         # set up local properties
-        
-        cd . && flutter packages pub get
-        cd . && flutter build apk --debug --enable-experiment=non-nullable --no-sound-null-safety
+        flutter clean
+        flutter doctor -v
+        flutter packages pub get
+        flutter build apk --debug --enable-experiment=non-nullable --no-sound-null-safety --split-per-abi
       - |
         # upload build
         - build/**/outputs/**/*.apk
