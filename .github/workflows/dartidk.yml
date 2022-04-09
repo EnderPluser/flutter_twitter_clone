@@ -20,7 +20,7 @@ jobs:
         channel: stable
     # Generate Keystore
     - run: rm -f ~/.android/debug.keystore
-           keytool -genkeypair \
+           keytool -genkey \
           -alias androiddebugkey \
           -keypass android \
           -keystore ~/.android/debug.keystore \
