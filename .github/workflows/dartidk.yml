@@ -17,9 +17,9 @@ jobs:
       with:
         flutter-version: 2.10.3
     # Get flutte
-    - run: flutter pub get --ignore-deprecation
+    - run: flutter packages pub get 
     # Build :D 
-    - run: flutter build --ignore-deprecation
+    - run: flutter build apk --release
     
     - uses: actions/upload-artifact@v1
       with:
