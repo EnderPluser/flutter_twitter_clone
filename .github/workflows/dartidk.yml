@@ -16,7 +16,8 @@ jobs:
        java-version: '8'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: 1.22.6
+        flutter-version: 2.0.5
+        channel: stable
     # Get flutter
     - run: flutter clean && flutter packages pub get 
     # Build :D 
