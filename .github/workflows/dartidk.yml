@@ -13,21 +13,11 @@ jobs:
     - uses: actions/setup-java@v2
       with:
        distribution: 'temurin' # See 'Supported distributions' for available options
-       java-version: '8'
+       java-version: '16'
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: 2.0.5
         channel: stable
-    # Generate Keystore
-    - run: keytool -genkeypair \
-          -alias androiddebugkey \
-          -keypass android \
-          -keystore ~/.android/debug.keystore \
-          -storepass android \
-          -dname 'CN=Android Debug,O=Android,C=US' \
-          -keyalg 'RSA' \
-          -keysize 2048 \
-          -validity 10000
     # Get flutter
     - run: flutter clean && flutter packages pub get 
     # Build :D 
